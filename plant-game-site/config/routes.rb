@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   get 'plant/index'
   get 'plant/dashboard'
+  
   get "plant", to: "plant#index", as: :plant
   get "dashboard", to: "plant#dashboard", as: :dashboard
 

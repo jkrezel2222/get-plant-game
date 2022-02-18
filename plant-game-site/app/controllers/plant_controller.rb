@@ -1,7 +1,7 @@
 class PlantController < ApplicationController
   
   def index
-    flash[:notice] = "Login successful"
+    flash[:notice] = "Your login was successful"
     flash[:alert] = "Invalid email or password"
   end
 
