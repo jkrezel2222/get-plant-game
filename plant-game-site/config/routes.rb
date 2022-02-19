@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
   
-  root 'plant#index'
+  root to: "plant#index"
   
   get 'plant/index'
   get 'plant/dashboard'
   
   get "plant", to: "plant#index", as: :plant
   get "dashboard", to: "plant#dashboard", as: :dashboard
+
+  get "register", to: "registrations#new", as: :register
+  post "register", to: "registrations#create"
+
+  get "sign_in", to: "sessions#new", as: :sign_in
+  post "sign_in", to: "sessions#create"
+
+  delete "logout", to: "sessions#destroy"
 
   get ':controller(/:action(/:id))'
 
