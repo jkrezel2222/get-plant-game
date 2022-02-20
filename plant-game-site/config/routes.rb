@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   
   get "plant", to: "plant#index", as: :plant
   get "dashboard", to: "plant#dashboard", as: :dashboard
-  get "plant", to: "plant#new", as: :plant_new
-  post "plant", to: "plant#create"
+  get "plantings", to: "plant#new", as: :plant_new
+  post "plantings", to: "plant#create"
 
   get "register", to: "registrations#new", as: :register
   post "register", to: "registrations#create"

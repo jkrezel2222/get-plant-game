@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light" style="background-color: #95d5b2">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #95d5b2>
     <div class="container-fluid">
         <%= link_to "Get Plant Game", plant_index_path, class: "navbar-brand" %>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,11 +12,13 @@
           </li>
         </ul>
       </div>
+
       <div>
+        <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <% if Current.user %>
             <li class="nav-item">
-              <span class="navbar-brand mb-0"><%= Current.user.email %></span>
+              <%= link_to Current.user.email, plant_dashboard_path, class: "navbar-brand mb-0" %>
             </li>
             <li class="nav-item">
               <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-outline-secondary" %>
@@ -26,10 +28,11 @@
               <%= link_to "Register", register_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Login", sign_in_path, class: "nav-link" %>
+              <%= link_to "Sign In", sign_in_path, class: "nav-link" %>
             </li>
           <% end %>
         </ul>
+        </div>
       </div>
     </div>
   </nav>

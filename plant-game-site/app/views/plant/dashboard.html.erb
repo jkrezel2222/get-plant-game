@@ -1,10 +1,10 @@
-<div>
-<br/>
-<h1>Dashboard</h1>
-<br/>
-<br/>
-<% if Current.user %>
-<p>Welcome <%= Current.user.email %></p><br/>
-<p>You can now create a new plant tip listing!</p>
-<% end %>
+<div class="container">
+    <br/>
+        <h3>Dashboard</h3>
+    <br/>
+    <br/>
+        <% if Current.user %>
+        <p>Welcome <%= Current.user.email %></p><br/>
+        <p>You can now create a <%= link_to "new plant tip listing", plantings_path %>!</p>
+        <% end %>
 </div>

@@ -1,7 +1,8 @@
+<div class="container">
 <br/>
-<h1>Dashboard sign in</h1>
+<h3>Dashboard sign in</h3>
 
-<%= form_with url: sign_in_path do |form| %>
+<%= form_with model: @user, url: sign_in_path do |form| %>
 <div class="mb-3">
     <%= form.label :email %>
     <%= form.text_field :email, class: "form-control" %>
@@ -14,8 +15,10 @@
     <%= form.submit "Sign In", class: "btn btn-info" %>
 </div>
 
-<% end %><br/>
+<br/>
 
 <div>
 <%= link_to "Or register new user", register_path %>
+</div>
+<% end %>
 </div>

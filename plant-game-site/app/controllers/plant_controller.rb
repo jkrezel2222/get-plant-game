@@ -1,9 +1,7 @@
 class PlantController < ApplicationController
   
-# before_action :require_user_logged_in!
-# Insert code here if user logged in then (generate below), else error
-
   def index
+    @plant = Plant.all
   end
 
   def dashboard
@@ -12,5 +10,22 @@ class PlantController < ApplicationController
   def new
     @plant = Plant.new
   end
+
+  def create
+     @plant = Current.user.plant.new(plant_params)
+     if @plant.save
+      redirect_to root_path, notice: "Thanks for your plant tip!"
+     else
+      render :new
+     end
+  end
+  
+
+  private
+    
+  def plant_params
+      params.require(:plant).permit(:title, :image, :description, :email, :create, :plant_new)
+  end
+
 
 end

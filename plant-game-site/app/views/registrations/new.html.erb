@@ -1,15 +1,10 @@
+<div class="container">
 <br/>
-<h1>Register</h1>
+<h3>Register</h3>
 <p>Got some plant game tips to share? Create a user account here</p>
 
 <%= form_with model: @user, url: register_path do |form| %>
-<% if form.object.errors.any? %>
-    <div class="alert alert-danger">
-        <% @user.errors.full_messages.each do |message| %>
-        <div><%= message %></div>
-        <% end %>
-    </div>
-<% end %>
+    <%= render "shared/form_errors", form: form %>
 
 <div class="mb-3">
     <%= form.label :email %>
@@ -27,4 +22,5 @@
 <div class="mb-3">
 <%= form.submit class: "btn btn-info" %>
 </div>
-    <% end %>
+<% end %>
+</div>

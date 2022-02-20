@@ -1,9 +1,23 @@
+
+<div class="container">
 <br/>
-<h1>Plant tips summary</h1><br/>
+<h3>Plant tips</h3><br/>
 
 
- <%= image_tag "pot-plants-neutral.jpg", height: 500 %><br/>
+    <%= image_tag "pot-plants-neutral.jpg", height: 500 %><br/>
 
-<br/><p>Search through list of plant tips here</p>
+    <br/><p>Scroll through our plant tips here:</p><br/>
 
-
+    <div>
+        <% @plant.each do |plant| %>
+        <tr>
+            <td><div style="color: #95d5b2"><h5><%= plant.title %></td></h5></div>
+        
+            <td><%= plant.description %></td>
+        </tr>
+        <br/>
+        <br/>
+        <br/>
+        <% end %>
+    </div>
+</div>
