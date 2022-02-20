@@ -1,5 +1,10 @@
+<div>
 <br/>
 <h1>Dashboard</h1>
 <br/>
-<p>Create a plant tip here</p>
-
+<br/>
+<% if Current.user %>
+<p>Welcome <%= Current.user.email %></p><br/>
+<p>You can now create a new plant tip listing!</p>
+<% end %>
+</div>
